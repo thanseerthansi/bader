@@ -1,5 +1,7 @@
 import json
-from select import select
+from math import sin, cos, sqrt, atan2, radians
+import math
+# from django.db.models import When,Case,Sum
 from django.shortcuts import render
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
@@ -221,16 +223,19 @@ class PropertyGetView(ListAPIView):
         try:
             id = self.request.POST.get("id",'')
             p_type = self.request.POST.get("property_type",'')
-            latitude = "27.7000000000000000"
-            longitude = "85.3333333000000000"
+            # lat = "27.7000000000000000"
+            # lng = "85.3333333000000000"
+            p_purpose = self.request.POST.get("property_purpose",'')
             city = self.request.POST.get("city",'')
             minimum_price = self.request.POST.get("price_minimum",'')
             maximum_price = self.request.POST.get("price_maximum",'')
             name = self.request.POST.get("name",'')
             p_radious = self.request.POST.get("radious",'')
             p_date = self.request.POST.get("date",'')
-            # nearest = PropertyModel.objects.raw('select * from (select latitude, longitude, SQRT(POW(69.1 * (latitude - [startlat]), 2) + POW(69.1 * (([startlng] - longitude) * COS(latitude / 57.3)), 2)) AS distance FROM PropertyModel ORDER BY distance) as vt where vt.distance < 25;')
-            # nearest = PropertyModel.objects.raw('SELECT * FROM myapp_PropertyModel')
+            dont_show = self.request.POST.get("exclude",'')
+             # nearest = PropertyModel.objects.raw('select * FROM (select id, latitude, longitude, SQRT(power(69.1 * (latitude - [latitude]), 2) + power(69.1 * (([longitude] - longitude) * COS(latitude / 57.3)), 2)) AS distance FROM propertyapp_propertymodel ORDER BY distance) as vt where vt.distance < 25;')
+            # nearest = PropertyModel.objects.raw(' SELECT ((ACOS(SIN(12.345 * PI() / 180) * SIN(latitude * PI() / 180) + COS(12.345 * PI() / 180) * COS(latitude * PI() / 180) * COS((67.89 - longitude) *  PI() / 180)) * 180 / PI()) * 60 * 1.1515 * 1.609344) AS distance FROM propertyapp_propertymodel WHERE lang='eng' HAVING distance<=30;')
+            # nearest = PropertyModel.objects.raw('SELECT id,( 3959 *acos(cos(radians(37)) * cos(radians(latitude)) * cos(radians(longitude) - radians(-122)) + sin(radians(37)) *sin(radians(latitude )))) AS distance FROM propertyapp_propertymodel HAVING distance < 28 ORDER BY distance LIMIT 0, 20;')
             # print("nearest",nearest)
             qs = PropertyModel.objects.all()
             if id:qs = qs.filter(id=id)
@@ -238,13 +243,31 @@ class PropertyGetView(ListAPIView):
             if minimum_price:qs= qs.filter(property_price__gt=minimum_price)
             if maximum_price:qs= qs.filter(property_price__lt=maximum_price)
             if name:qs= qs.filter(property_name__icontains=name)
-            if p_type:qs= qs.filter(property_type=p_type)
+            if p_type:qs= qs.filter(property_type__types__icontains=p_type)
             if p_radious:qs= qs.filter(property_radious=p_radious)
             if p_date:qs= qs.filter(added_date=p_date)
-            return Response({"data":PropertySerializer(qs,many=True).data})
+            if p_purpose:qs= qs.filter(property_purpose=p_purpose)
+            if dont_show : qs = qs.exclude(property_type__types__icontains=dont_show)
+            return Response({"data":PropertySerializer(qs ,many=True).data})
 
         except Exception as e: return Response({"Status":False,"Message":str(e)})
-            
+
+# class checkquery(ListAPIView):
+# #     # from math import sin, cos, sqrt, atan2, dians
+#     def get(self,request):
+
+#         lat1 = 52.2296756
+#         lon1 = 21.0122287
+        
+        # if near_by != "":
+        #     latitude = self.request.query_params["latitude"]
+        #     longitude = self.request.query_params["longitude"]
+        #     print(type(longitude))
+        #     ref_location = Point(float(longitude), float(latitude))
+        #     distance = fetch_Param_Value("default_search_distance")
+        #     queryset = queryset.filter(location__dwithin=(ref_location, distance)).exclude(id=user.id) \
+        #         .annotate(distance=GeometryDistance("location", ref_location)) \
+        #         .order_by("distance")      
 
 class LikedPropertyView(ListAPIView):
     serializer_class = LikedPropertySerializer

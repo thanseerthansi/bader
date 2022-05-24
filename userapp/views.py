@@ -30,8 +30,8 @@ class UserView(ListAPIView):
             if isagent: qs = qs.filter(is_agent=isagent)
             if isadmin: qs = qs.filter(is_admin=isadmin)
             return qs.order_by('-id')
-        except Exception as e:
-            return Response({"status":False,"message":str(e),})
+        except :
+            return None
 
     def post(self,request):
         userobj = ""
@@ -124,7 +124,7 @@ class LoginView(ObtainAuthToken):
                                            context={'request': request})
         # print(serializer)
         try:
-            test = serializer.is_valid(raise_exception=True)
+            test = serializer.is_valid(raise_exception=True) 
             user = serializer.validated_data['user']
 
 
@@ -147,6 +147,8 @@ class Logout(ListAPIView):
     permission_classes = (IsAuthenticatedOrReadOnly,)
   
     def get(self,request):
-        Data = Token.objects.get(user = self.request.user.id)
-        Data.delete()
-        return Response({"status":True,"message":"logout successfully"})
+        try:
+            Data = Token.objects.get(user = self.request.user.id)
+            Data.delete()
+            return Response({"status":True,"message":"logout successfully"})
+        except Exception as e: return Response({"Status":False,"Message":str(e)})
