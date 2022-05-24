@@ -1,7 +1,8 @@
 from django.contrib import admin
-from propertyapp.models import PropertyTypesModel, PropertyModel
+from propertyapp.models import LikedPropertyModel, PropertyTypesModel, PropertyModel
 
 
 # Register your models here.
 admin.site.register(PropertyTypesModel)
 admin.site.register(PropertyModel)
+admin.site.register(LikedPropertyModel)
