@@ -89,6 +89,455 @@
         "documentation": {}
     },
     {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal2tiles",
+        "description": "osgeo_utils.gdal2tiles",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal2tiles",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal2tiles",
+        "description": "osgeo_utils.gdal2tiles",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal2tiles",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "deprecation_warn",
+        "importPath": "osgeo.gdal",
+        "description": "osgeo.gdal",
+        "isExtraImport": true,
+        "detail": "osgeo.gdal",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal2xyz",
+        "description": "osgeo_utils.gdal2xyz",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal2xyz",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal2xyz",
+        "description": "osgeo_utils.gdal2xyz",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal2xyz",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdalattachpct",
+        "description": "osgeo_utils.gdalattachpct",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalattachpct",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdalattachpct",
+        "description": "osgeo_utils.gdalattachpct",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalattachpct",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdalcompare",
+        "description": "osgeo_utils.gdalcompare",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalcompare",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdalcompare",
+        "description": "osgeo_utils.gdalcompare",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalcompare",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdalmove",
+        "description": "osgeo_utils.gdalmove",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalmove",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdalmove",
+        "description": "osgeo_utils.gdalmove",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdalmove",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_calc",
+        "description": "osgeo_utils.gdal_calc",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_calc",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_calc",
+        "description": "osgeo_utils.gdal_calc",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_calc",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_edit",
+        "description": "osgeo_utils.gdal_edit",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_edit",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_edit",
+        "description": "osgeo_utils.gdal_edit",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_edit",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_fillnodata",
+        "description": "osgeo_utils.gdal_fillnodata",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_fillnodata",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_fillnodata",
+        "description": "osgeo_utils.gdal_fillnodata",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_fillnodata",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_merge",
+        "description": "osgeo_utils.gdal_merge",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_merge",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_merge",
+        "description": "osgeo_utils.gdal_merge",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_merge",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_pansharpen",
+        "description": "osgeo_utils.gdal_pansharpen",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_pansharpen",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_pansharpen",
+        "description": "osgeo_utils.gdal_pansharpen",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_pansharpen",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_polygonize",
+        "description": "osgeo_utils.gdal_polygonize",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_polygonize",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_polygonize",
+        "description": "osgeo_utils.gdal_polygonize",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_polygonize",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_proximity",
+        "description": "osgeo_utils.gdal_proximity",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_proximity",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_proximity",
+        "description": "osgeo_utils.gdal_proximity",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_proximity",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_retile",
+        "description": "osgeo_utils.gdal_retile",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_retile",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_retile",
+        "description": "osgeo_utils.gdal_retile",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_retile",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.gdal_sieve",
+        "description": "osgeo_utils.gdal_sieve",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_sieve",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.gdal_sieve",
+        "description": "osgeo_utils.gdal_sieve",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.gdal_sieve",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.ogrmerge",
+        "description": "osgeo_utils.ogrmerge",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.ogrmerge",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.ogrmerge",
+        "description": "osgeo_utils.ogrmerge",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.ogrmerge",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.pct2rgb",
+        "description": "osgeo_utils.pct2rgb",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.pct2rgb",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.pct2rgb",
+        "description": "osgeo_utils.pct2rgb",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.pct2rgb",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "osgeo_utils.rgb2pct",
+        "description": "osgeo_utils.rgb2pct",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.rgb2pct",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "importPath": "osgeo_utils.rgb2pct",
+        "description": "osgeo_utils.rgb2pct",
+        "isExtraImport": true,
+        "detail": "osgeo_utils.rgb2pct",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -122,86 +571,6 @@
     },
     {
         "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -226,23 +595,16 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
+        "label": "django.contrib.gis.db.models.fields",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "django.conf",
+        "importPath": "django.contrib.gis.db.models.fields",
+        "description": "django.contrib.gis.db.models.fields",
+        "detail": "django.contrib.gis.db.models.fields",
         "documentation": {}
     },
     {
         "label": "LikedPropertyModel",
-        "importPath": "propertyapp.models",
-        "description": "propertyapp.models",
-        "isExtraImport": true,
-        "detail": "propertyapp.models",
-        "documentation": {}
-    },
-    {
-        "label": "PropertyTypesModel",
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
         "isExtraImport": true,
@@ -267,14 +629,6 @@
     },
     {
         "label": "PropertyModel",
-        "importPath": "propertyapp.models",
-        "description": "propertyapp.models",
-        "isExtraImport": true,
-        "detail": "propertyapp.models",
-        "documentation": {}
-    },
-    {
-        "label": "PropertyTypesModel",
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
         "isExtraImport": true,
@@ -306,11 +660,19 @@
         "documentation": {}
     },
     {
-        "label": "CASCADE",
-        "importPath": "tkinter",
-        "description": "tkinter",
+        "label": "models",
+        "importPath": "django.contrib.gis.db",
+        "description": "django.contrib.gis.db",
         "isExtraImport": true,
-        "detail": "tkinter",
+        "detail": "django.contrib.gis.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.contrib.gis.db",
+        "description": "django.contrib.gis.db",
+        "isExtraImport": true,
+        "detail": "django.contrib.gis.db",
         "documentation": {}
     },
     {
@@ -387,11 +749,35 @@
         "documentation": {}
     },
     {
-        "label": "select",
-        "importPath": "select",
-        "description": "select",
+        "label": "Point",
+        "importPath": "django.contrib.gis.geos",
+        "description": "django.contrib.gis.geos",
         "isExtraImport": true,
-        "detail": "select",
+        "detail": "django.contrib.gis.geos",
+        "documentation": {}
+    },
+    {
+        "label": "GEOSGeometry",
+        "importPath": "django.contrib.gis.geos",
+        "description": "django.contrib.gis.geos",
+        "isExtraImport": true,
+        "detail": "django.contrib.gis.geos",
+        "documentation": {}
+    },
+    {
+        "label": "D",
+        "importPath": "django.contrib.gis.measure",
+        "description": "django.contrib.gis.measure",
+        "isExtraImport": true,
+        "detail": "django.contrib.gis.measure",
+        "documentation": {}
+    },
+    {
+        "label": "GeometryDistance",
+        "importPath": "django.contrib.gis.db.models.functions",
+        "description": "django.contrib.gis.db.models.functions",
+        "isExtraImport": true,
+        "detail": "django.contrib.gis.db.models.functions",
         "documentation": {}
     },
     {
@@ -468,14 +854,6 @@
     },
     {
         "label": "PropertySerializer",
-        "importPath": "propertyapp.serializers",
-        "description": "propertyapp.serializers",
-        "isExtraImport": true,
-        "detail": "propertyapp.serializers",
-        "documentation": {}
-    },
-    {
-        "label": "PropertyTypesSerializer",
         "importPath": "propertyapp.serializers",
         "description": "propertyapp.serializers",
         "isExtraImport": true,
@@ -622,15 +1000,6 @@
         "documentation": {}
     },
     {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
-        "documentation": {}
-    },
-    {
         "label": "application",
         "kind": 5,
         "importPath": "badder.asgi",
@@ -644,7 +1013,7 @@
         "kind": 5,
         "importPath": "badder.settings",
         "description": "badder.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = '&=32-(9ymye89vry487d%idt357xbv_br35!#dfwpb$95(j8(o'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nimport os\n# if os.name == 'nt':\n#     import platform\n#     OSGEO4W = r\"C:\\OSGeo4W\"\n#     if '64' in platform.architecture()[0]:\n#         OSGEO4W += \"64\"\n#     assert os.path.isdir(OSGEO4W), \"Directory does not exist: \" + OSGEO4W \n#     os.environ['OSGEO4W_ROOT'] = OSGEO4W\n#     os.environ['GDAL_DATA'] = OSGEO4W + r\"\\share\\gdal\"",
         "detail": "badder.settings",
         "documentation": {}
     },
@@ -716,7 +1085,7 @@
         "kind": 5,
         "importPath": "badder.settings",
         "description": "badder.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'badder.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "peekOfCode": "WSGI_APPLICATION = 'badder.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.contrib.gis.db.backends.postgis',\n        'NAME': 'mydatabase',\n        'USER': 'postgres',\n        'PASSWORD': 'thanseer@97',\n        'HOST': '127.0.0.1',",
         "detail": "badder.settings",
         "documentation": {}
     },
@@ -725,7 +1094,7 @@
         "kind": 5,
         "importPath": "badder.settings",
         "description": "badder.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.contrib.gis.db.backends.postgis',\n        'NAME': 'mydatabase',\n        'USER': 'postgres',\n        'PASSWORD': 'thanseer@97',\n        'HOST': '127.0.0.1',\n        'PORT': '',    \n    }\n}",
         "detail": "badder.settings",
         "documentation": {}
     },
@@ -842,53 +1211,35 @@
         "kind": 6,
         "importPath": "propertyapp.migrations.0001_initial",
         "description": "propertyapp.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='PropertyTypesModel',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('types', models.CharField(max_length=20)),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='PropertyTypesModel',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "propertyapp.migrations.0001_initial",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "propertyapp.migrations.0002_propertymodel_description",
-        "description": "propertyapp.migrations.0002_propertymodel_description",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('propertyapp', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='propertymodel',\n            name='description',\n            field=models.TextField(blank=True),\n        ),",
-        "detail": "propertyapp.migrations.0002_propertymodel_description",
+        "importPath": "propertyapp.migrations.0002_remove_propertymodel_latitude_and_more",
+        "description": "propertyapp.migrations.0002_remove_propertymodel_latitude_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('propertyapp', '0001_initial'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='propertymodel',\n            name='latitude',\n        ),\n        migrations.RemoveField(",
+        "detail": "propertyapp.migrations.0002_remove_propertymodel_latitude_and_more",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "propertyapp.migrations.0003_propertymodel_latitude_propertymodel_longtitude",
-        "description": "propertyapp.migrations.0003_propertymodel_latitude_propertymodel_longtitude",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('propertyapp', '0002_propertymodel_description'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='propertymodel',\n            name='latitude',\n            field=models.DecimalField(blank=True, decimal_places=6, max_digits=10, null=True),\n        ),",
-        "detail": "propertyapp.migrations.0003_propertymodel_latitude_propertymodel_longtitude",
+        "importPath": "propertyapp.migrations.0003_alter_propertymodel_property_type_and_more",
+        "description": "propertyapp.migrations.0003_alter_propertymodel_property_type_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('propertyapp', '0002_remove_propertymodel_latitude_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='propertymodel',\n            name='property_type',\n            field=models.CharField(max_length=20),\n        ),",
+        "detail": "propertyapp.migrations.0003_alter_propertymodel_property_type_and_more",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "propertyapp.migrations.0004_propertymodel_agent_likedpropertymodel",
-        "description": "propertyapp.migrations.0004_propertymodel_agent_likedpropertymodel",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('propertyapp', '0003_propertymodel_latitude_propertymodel_longtitude'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='propertymodel',\n            name='agent',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),",
-        "detail": "propertyapp.migrations.0004_propertymodel_agent_likedpropertymodel",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "propertyapp.migrations.0005_alter_propertymodel_latitude_and_more",
-        "description": "propertyapp.migrations.0005_alter_propertymodel_latitude_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('propertyapp', '0004_propertymodel_agent_likedpropertymodel'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='propertymodel',\n            name='latitude',\n            field=models.DecimalField(blank=True, decimal_places=20, max_digits=50, null=True),\n        ),",
-        "detail": "propertyapp.migrations.0005_alter_propertymodel_latitude_and_more",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "propertyapp.migrations.0006_alter_propertymodel_latitude_and_more",
-        "description": "propertyapp.migrations.0006_alter_propertymodel_latitude_and_more",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('propertyapp', '0005_alter_propertymodel_latitude_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='propertymodel',\n            name='latitude',\n            field=models.DecimalField(blank=True, decimal_places=6, max_digits=9, null=True),\n        ),",
-        "detail": "propertyapp.migrations.0006_alter_propertymodel_latitude_and_more",
+        "importPath": "propertyapp.migrations.0004_propertymodel_property_bath_and_more",
+        "description": "propertyapp.migrations.0004_propertymodel_property_bath_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('propertyapp', '0003_alter_propertymodel_property_type_and_more'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='propertymodel',\n            name='property_bath',\n            field=models.FloatField(blank=True, default=0.0, null=True),\n        ),",
+        "detail": "propertyapp.migrations.0004_propertymodel_property_bath_and_more",
         "documentation": {}
     },
     {
@@ -901,20 +1252,11 @@
         "documentation": {}
     },
     {
-        "label": "PropertyTypesModel",
-        "kind": 6,
-        "importPath": "propertyapp.models",
-        "description": "propertyapp.models",
-        "peekOfCode": "class PropertyTypesModel(models.Model):\n    types = models.CharField(max_length=20)\n    description = models.TextField()\nclass PropertyModel(models.Model):\n    agent = models.ForeignKey(UserModel,on_delete=models.CASCADE,null=True)\n    property_type = models.ForeignKey(PropertyTypesModel,on_delete=models.CASCADE)\n    property_name =  models.CharField(max_length=50)\n    property_radious = models.FloatField(default=0.0,blank=True)\n    property_price = models.FloatField(default=0.0,blank=True)\n    property_purpose = models.CharField(max_length=10)",
-        "detail": "propertyapp.models",
-        "documentation": {}
-    },
-    {
         "label": "PropertyModel",
         "kind": 6,
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
-        "peekOfCode": "class PropertyModel(models.Model):\n    agent = models.ForeignKey(UserModel,on_delete=models.CASCADE,null=True)\n    property_type = models.ForeignKey(PropertyTypesModel,on_delete=models.CASCADE)\n    property_name =  models.CharField(max_length=50)\n    property_radious = models.FloatField(default=0.0,blank=True)\n    property_price = models.FloatField(default=0.0,blank=True)\n    property_purpose = models.CharField(max_length=10)\n    property_city = models.CharField(max_length=50)\n    added_date =  models.DateTimeField(auto_now_add=True)\n    updated_date = models.DateTimeField(auto_now=True)",
+        "peekOfCode": "class PropertyModel(models.Model):\n    agent = models.ForeignKey(UserModel,on_delete=models.CASCADE,null=True)\n    property_type = models.CharField(max_length=20)\n    residential_type = models.CharField(max_length=20,null=True)\n    property_name =  models.CharField(max_length=50)\n    property_radious = models.FloatField(default=0.0,blank=True)\n    property_bed = models.FloatField(default=0.0,blank=True,null=True)\n    property_room = models.FloatField(default=0.0,blank=True,null=True)\n    property_bath = models.FloatField(default=0.0,blank=True,null=True)\n    property_price = models.FloatField(default=0.0,blank=True)",
         "detail": "propertyapp.models",
         "documentation": {}
     },
@@ -925,15 +1267,6 @@
         "description": "propertyapp.models",
         "peekOfCode": "class LikedPropertyModel(models.Model):\n    user = models.ForeignKey(UserModel,on_delete=models.CASCADE)\n    liked_property = models.ManyToManyField(PropertyModel)",
         "detail": "propertyapp.models",
-        "documentation": {}
-    },
-    {
-        "label": "PropertyTypesSerializer",
-        "kind": 6,
-        "importPath": "propertyapp.serializers",
-        "description": "propertyapp.serializers",
-        "peekOfCode": "class PropertyTypesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PropertyTypesModel\n        fields = '__all__'\nclass PropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PropertyModel\n        fields = '__all__'\nclass LikedPropertySerializer(serializers.ModelSerializer):\n    class Meta:",
-        "detail": "propertyapp.serializers",
         "documentation": {}
     },
     {
@@ -959,17 +1292,8 @@
         "kind": 5,
         "importPath": "propertyapp.urls",
         "description": "propertyapp.urls",
-        "peekOfCode": "urlpatterns = [\n   path('propertytype/',PropertyTypeView.as_view()),\n   path('property/',PropertyView.as_view()),\n   path('propertyget/',PropertyGetView.as_view()),\n   path('likedproperty/',LikedPropertyView.as_view()),\n]",
+        "peekOfCode": "urlpatterns = [\n   # path('propertytype/',PropertyTypeView.as_view()),\n   path('property/',PropertyView.as_view()),\n   path('propertyget/',PropertyGetView.as_view()),\n   path('likedproperty/',LikedPropertyView.as_view()),\n   # path('querycheck/',checkquery.as_view()),\n]",
         "detail": "propertyapp.urls",
-        "documentation": {}
-    },
-    {
-        "label": "PropertyTypeView",
-        "kind": 6,
-        "importPath": "propertyapp.views",
-        "description": "propertyapp.views",
-        "peekOfCode": "class PropertyTypeView(ListAPIView):\n    serializer_class = PropertyTypesSerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(IsAuthenticated,)\n    def post(self,request):\n        isadmin = self.request.user.is_admin\n        isagent = self.request.user.is_agent\n        superuser = self.request.user.is_superuser\n        if isadmin==True or superuser == True or isagent==True:\n            try:",
-        "detail": "propertyapp.views",
         "documentation": {}
     },
     {
@@ -986,7 +1310,7 @@
         "kind": 6,
         "importPath": "propertyapp.views",
         "description": "propertyapp.views",
-        "peekOfCode": "class PropertyGetView(ListAPIView):\n    def get(self,request):\n        try:\n            id = self.request.POST.get(\"id\",'')\n            p_type = self.request.POST.get(\"property_type\",'')\n            latitude = \"27.7000000000000000\"\n            longitude = \"85.3333333000000000\"\n            city = self.request.POST.get(\"city\",'')\n            minimum_price = self.request.POST.get(\"price_minimum\",'')\n            maximum_price = self.request.POST.get(\"price_maximum\",'')",
+        "peekOfCode": "class PropertyGetView(ListAPIView):\n    def get(self,request):\n        try:\n            id = self.request.POST.get(\"id\",'')\n            p_type = self.request.POST.get(\"property_type\",'')\n            p_purpose = self.request.POST.get(\"property_purpose\",'')\n            city = self.request.POST.get(\"city\",'')\n            residential_type = self.request.POST.get(\"residential_type\",'')# eg villa or flat.... \n            minimum_price = self.request.POST.get(\"price_minimum\",'')\n            maximum_price = self.request.POST.get(\"price_maximum\",'')",
         "detail": "propertyapp.views",
         "documentation": {}
     },
@@ -1067,7 +1391,7 @@
         "kind": 6,
         "importPath": "userapp.views",
         "description": "userapp.views",
-        "peekOfCode": "class LoginView(ObtainAuthToken):\n    def post(self, request, *args, **kwargs):\n        serializer = self.serializer_class(data=request.data,\n                                           context={'request': request})\n        # print(serializer)\n        try:\n            test = serializer.is_valid(raise_exception=True)\n            user = serializer.validated_data['user']\n            token, created = Token.objects.get_or_create(user=user)\n            return Response({",
+        "peekOfCode": "class LoginView(ObtainAuthToken):\n    def post(self, request, *args, **kwargs):\n        serializer = self.serializer_class(data=request.data,\n                                           context={'request': request})\n        # print(serializer)\n        try:\n            test = serializer.is_valid(raise_exception=True) \n            user = serializer.validated_data['user']\n            token, created = Token.objects.get_or_create(user=user)\n            return Response({",
         "detail": "userapp.views",
         "documentation": {}
     },
@@ -1076,7 +1400,7 @@
         "kind": 6,
         "importPath": "userapp.views",
         "description": "userapp.views",
-        "peekOfCode": "class Logout(ListAPIView):\n    authentication_classes = (TokenAuthentication,)\n    permission_classes = (IsAuthenticatedOrReadOnly,)\n    def get(self,request):\n        Data = Token.objects.get(user = self.request.user.id)\n        Data.delete()\n        return Response({\"status\":True,\"message\":\"logout successfully\"})",
+        "peekOfCode": "class Logout(ListAPIView):\n    authentication_classes = (TokenAuthentication,)\n    permission_classes = (IsAuthenticatedOrReadOnly,)\n    def get(self,request):\n        try:\n            Data = Token.objects.get(user = self.request.user.id)\n            Data.delete()\n            return Response({\"status\":True,\"message\":\"logout successfully\"})\n        except Exception as e: return Response({\"Status\":False,\"Message\":str(e)})",
         "detail": "userapp.views",
         "documentation": {}
     },

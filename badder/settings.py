@@ -11,10 +11,26 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+import os
+# if os.name == 'nt':
+#     import platform
+#     OSGEO4W = r"C:\OSGeo4W"
+#     if '64' in platform.architecture()[0]:
+#         OSGEO4W += "64"
+#     assert os.path.isdir(OSGEO4W), "Directory does not exist: " + OSGEO4W 
+#     os.environ['OSGEO4W_ROOT'] = OSGEO4W
+#     os.environ['GDAL_DATA'] = OSGEO4W + r"\share\gdal"
+#     os.environ['PROJ_LIB'] = OSGEO4W + r"\share\proj"
+#     os.environ['PATH'] = OSGEO4W + r"\bin;" + os.environ['PATH']
+if os.name == 'nt':
+    VENV_BASE = os.environ['VIRTUAL_ENV']
+    os.environ['PATH'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo') + ';' + os.environ['PATH']
+    os.environ['PROJ_LIB'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo\\data\\proj') + ';' + os.environ['PATH']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -43,6 +59,7 @@ INSTALLED_APPS = [
     'propertyapp',
 
     #3rd partyapps
+    'django.contrib.gis',
     'rest_framework',
     'rest_framework.authtoken',
     # 'location_field.apps.DefaultConfig',
@@ -84,8 +101,12 @@ WSGI_APPLICATION = 'badder.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'mydatabase',
+        'USER': 'postgres',
+        'PASSWORD': 'thanseer@97',
+        'HOST': '127.0.0.1',
+        'PORT': '',    
     }
 }
 
