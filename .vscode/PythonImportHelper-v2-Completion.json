@@ -25,6 +25,30 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -506,11 +530,27 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.conf",
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -531,6 +571,62 @@
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -604,6 +700,14 @@
         "documentation": {}
     },
     {
+        "label": "ImagesModel",
+        "importPath": "propertyapp.models",
+        "description": "propertyapp.models",
+        "isExtraImport": true,
+        "detail": "propertyapp.models",
+        "documentation": {}
+    },
+    {
         "label": "LikedPropertyModel",
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
@@ -613,6 +717,14 @@
     },
     {
         "label": "PropertyModel",
+        "importPath": "propertyapp.models",
+        "description": "propertyapp.models",
+        "isExtraImport": true,
+        "detail": "propertyapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "ImagesModel",
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
         "isExtraImport": true,
@@ -842,6 +954,14 @@
         "description": "badder.validation",
         "isExtraImport": true,
         "detail": "badder.validation",
+        "documentation": {}
+    },
+    {
+        "label": "ImagesSerializer",
+        "importPath": "propertyapp.serializers",
+        "description": "propertyapp.serializers",
+        "isExtraImport": true,
+        "detail": "propertyapp.serializers",
         "documentation": {}
     },
     {
@@ -1139,7 +1259,7 @@
         "kind": 5,
         "importPath": "badder.settings",
         "description": "badder.settings",
-        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'userapp.UserModel'\n# REST_FRAMEWORK = {",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'userapp.UserModel'\nMEDIA_URL = '/media/'",
         "detail": "badder.settings",
         "documentation": {}
     },
@@ -1148,7 +1268,7 @@
         "kind": 5,
         "importPath": "badder.settings",
         "description": "badder.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'userapp.UserModel'\n# REST_FRAMEWORK = {\n#    'DEFAULT_AUTHENTICATION_CLASSES': (",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'userapp.UserModel'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
         "detail": "badder.settings",
         "documentation": {}
     },
@@ -1157,7 +1277,7 @@
         "kind": 5,
         "importPath": "badder.settings",
         "description": "badder.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'userapp.UserModel'\n# REST_FRAMEWORK = {\n#    'DEFAULT_AUTHENTICATION_CLASSES': (\n#        'rest_framework.authentication.TokenAuthentication',\n#    ),\n#    'DEFAULT_PERMISSION_CLASSES': (",
+        "peekOfCode": "STATIC_URL = '/static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'userapp.UserModel'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# REST_FRAMEWORK = {\n#    'DEFAULT_AUTHENTICATION_CLASSES': (\n#        'rest_framework.authentication.TokenAuthentication',",
         "detail": "badder.settings",
         "documentation": {}
     },
@@ -1166,7 +1286,7 @@
         "kind": 5,
         "importPath": "badder.settings",
         "description": "badder.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'userapp.UserModel'\n# REST_FRAMEWORK = {\n#    'DEFAULT_AUTHENTICATION_CLASSES': (\n#        'rest_framework.authentication.TokenAuthentication',\n#    ),\n#    'DEFAULT_PERMISSION_CLASSES': (\n#         'rest_framework.permissions.IsAdminUser'\n#    ),\n# }",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = 'userapp.UserModel'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# REST_FRAMEWORK = {\n#    'DEFAULT_AUTHENTICATION_CLASSES': (\n#        'rest_framework.authentication.TokenAuthentication',\n#    ),\n#    'DEFAULT_PERMISSION_CLASSES': (\n#         'rest_framework.permissions.IsAdminUser'",
         "detail": "badder.settings",
         "documentation": {}
     },
@@ -1175,7 +1295,25 @@
         "kind": 5,
         "importPath": "badder.settings",
         "description": "badder.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'userapp.UserModel'\n# REST_FRAMEWORK = {\n#    'DEFAULT_AUTHENTICATION_CLASSES': (\n#        'rest_framework.authentication.TokenAuthentication',\n#    ),\n#    'DEFAULT_PERMISSION_CLASSES': (\n#         'rest_framework.permissions.IsAdminUser'\n#    ),\n# }",
+        "peekOfCode": "AUTH_USER_MODEL = 'userapp.UserModel'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# REST_FRAMEWORK = {\n#    'DEFAULT_AUTHENTICATION_CLASSES': (\n#        'rest_framework.authentication.TokenAuthentication',\n#    ),\n#    'DEFAULT_PERMISSION_CLASSES': (\n#         'rest_framework.permissions.IsAdminUser'\n#    ),",
+        "detail": "badder.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "badder.settings",
+        "description": "badder.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# REST_FRAMEWORK = {\n#    'DEFAULT_AUTHENTICATION_CLASSES': (\n#        'rest_framework.authentication.TokenAuthentication',\n#    ),\n#    'DEFAULT_PERMISSION_CLASSES': (\n#         'rest_framework.permissions.IsAdminUser'\n#    ),\n# }",
+        "detail": "badder.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "badder.settings",
+        "description": "badder.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# REST_FRAMEWORK = {\n#    'DEFAULT_AUTHENTICATION_CLASSES': (\n#        'rest_framework.authentication.TokenAuthentication',\n#    ),\n#    'DEFAULT_PERMISSION_CLASSES': (\n#         'rest_framework.permissions.IsAdminUser'\n#    ),\n# }",
         "detail": "badder.settings",
         "documentation": {}
     },
@@ -1184,7 +1322,7 @@
         "kind": 5,
         "importPath": "badder.urls",
         "description": "badder.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('user/',include('userapp.urls')),\n    path('property/',include('propertyapp.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('user/',include('userapp.urls')),\n    path('property/',include('propertyapp.urls')),\n]\nurlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)",
         "detail": "badder.urls",
         "documentation": {}
     },
@@ -1243,6 +1381,24 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "propertyapp.migrations.0005_likedpropertymodel_created_date_and_more",
+        "description": "propertyapp.migrations.0005_likedpropertymodel_created_date_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('propertyapp', '0004_propertymodel_property_bath_and_more'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='likedpropertymodel',\n            name='created_date',\n            field=models.DateTimeField(auto_now_add=True, null=True),\n        ),",
+        "detail": "propertyapp.migrations.0005_likedpropertymodel_created_date_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "propertyapp.migrations.0006_alter_imagesmodel_image_purpose_and_more",
+        "description": "propertyapp.migrations.0006_alter_imagesmodel_image_purpose_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('propertyapp', '0005_likedpropertymodel_created_date_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='imagesmodel',\n            name='image_purpose',\n            field=models.CharField(max_length=100),\n        ),",
+        "detail": "propertyapp.migrations.0006_alter_imagesmodel_image_purpose_and_more",
+        "documentation": {}
+    },
+    {
         "label": "PropertyappConfig",
         "kind": 6,
         "importPath": "propertyapp.apps",
@@ -1256,7 +1412,7 @@
         "kind": 6,
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
-        "peekOfCode": "class PropertyModel(models.Model):\n    agent = models.ForeignKey(UserModel,on_delete=models.CASCADE,null=True)\n    property_type = models.CharField(max_length=20)\n    residential_type = models.CharField(max_length=20,null=True)\n    property_name =  models.CharField(max_length=50)\n    property_radious = models.FloatField(default=0.0,blank=True)\n    property_bed = models.FloatField(default=0.0,blank=True,null=True)\n    property_room = models.FloatField(default=0.0,blank=True,null=True)\n    property_bath = models.FloatField(default=0.0,blank=True,null=True)\n    property_price = models.FloatField(default=0.0,blank=True)",
+        "peekOfCode": "class PropertyModel(models.Model):\n    agent = models.ForeignKey(UserModel,on_delete=models.CASCADE,null=True)\n    property_type = models.CharField(max_length=100)\n    residential_type = models.CharField(max_length=100,null=True)\n    property_name =  models.CharField(max_length=100)\n    property_radious = models.FloatField(default=0.0,blank=True)\n    property_bed = models.FloatField(default=0.0,blank=True,null=True)\n    property_room = models.FloatField(default=0.0,blank=True,null=True)\n    property_bath = models.FloatField(default=0.0,blank=True,null=True)\n    property_price = models.FloatField(default=0.0,blank=True)",
         "detail": "propertyapp.models",
         "documentation": {}
     },
@@ -1265,7 +1421,16 @@
         "kind": 6,
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
-        "peekOfCode": "class LikedPropertyModel(models.Model):\n    user = models.ForeignKey(UserModel,on_delete=models.CASCADE)\n    liked_property = models.ManyToManyField(PropertyModel)",
+        "peekOfCode": "class LikedPropertyModel(models.Model):\n    user = models.ForeignKey(UserModel,on_delete=models.CASCADE)\n    liked_property = models.ManyToManyField(PropertyModel)\n    created_date =  models.DateTimeField(auto_now_add=True,null=True)\n    updated_date = models.DateTimeField(auto_now=True,null=True)\nclass ImagesModel(models.Model):\n    property_id = models.ForeignKey(PropertyModel,on_delete=models.CASCADE)\n    images = models.ImageField(upload_to='Image',blank=True)\n    image_purpose = models.CharField(max_length=100)\n    created_date =  models.DateTimeField(auto_now_add=True)",
+        "detail": "propertyapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "ImagesModel",
+        "kind": 6,
+        "importPath": "propertyapp.models",
+        "description": "propertyapp.models",
+        "peekOfCode": "class ImagesModel(models.Model):\n    property_id = models.ForeignKey(PropertyModel,on_delete=models.CASCADE)\n    images = models.ImageField(upload_to='Image',blank=True)\n    image_purpose = models.CharField(max_length=100)\n    created_date =  models.DateTimeField(auto_now_add=True)\n    updated_date = models.DateTimeField(auto_now=True)",
         "detail": "propertyapp.models",
         "documentation": {}
     },
@@ -1274,7 +1439,7 @@
         "kind": 6,
         "importPath": "propertyapp.serializers",
         "description": "propertyapp.serializers",
-        "peekOfCode": "class PropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PropertyModel\n        fields = '__all__'\nclass LikedPropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = LikedPropertyModel\n        fields = '__all__'",
+        "peekOfCode": "class PropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PropertyModel\n        fields = '__all__'\nclass LikedPropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = LikedPropertyModel\n        fields = '__all__'\nclass ImagesSerializer(serializers.ModelSerializer):\n    class Meta:",
         "detail": "propertyapp.serializers",
         "documentation": {}
     },
@@ -1283,7 +1448,16 @@
         "kind": 6,
         "importPath": "propertyapp.serializers",
         "description": "propertyapp.serializers",
-        "peekOfCode": "class LikedPropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = LikedPropertyModel\n        fields = '__all__'",
+        "peekOfCode": "class LikedPropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = LikedPropertyModel\n        fields = '__all__'\nclass ImagesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ImagesModel\n        fields = '__all__'",
+        "detail": "propertyapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ImagesSerializer",
+        "kind": 6,
+        "importPath": "propertyapp.serializers",
+        "description": "propertyapp.serializers",
+        "peekOfCode": "class ImagesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ImagesModel\n        fields = '__all__'",
         "detail": "propertyapp.serializers",
         "documentation": {}
     },
@@ -1292,7 +1466,7 @@
         "kind": 5,
         "importPath": "propertyapp.urls",
         "description": "propertyapp.urls",
-        "peekOfCode": "urlpatterns = [\n   # path('propertytype/',PropertyTypeView.as_view()),\n   path('property/',PropertyView.as_view()),\n   path('propertyget/',PropertyGetView.as_view()),\n   path('likedproperty/',LikedPropertyView.as_view()),\n   # path('querycheck/',checkquery.as_view()),\n]",
+        "peekOfCode": "urlpatterns = [\n   # path('propertytype/',PropertyTypeView.as_view()),\n   path('property/',PropertyView.as_view()),\n   path('propertyget/',PropertyGetView.as_view()),\n   path('likedproperty/',LikedPropertyView.as_view()),\n   path('images/',ImagesView.as_view()),\n   # path('check/',checkquery.as_view()),\n]",
         "detail": "propertyapp.urls",
         "documentation": {}
     },
@@ -1310,7 +1484,7 @@
         "kind": 6,
         "importPath": "propertyapp.views",
         "description": "propertyapp.views",
-        "peekOfCode": "class PropertyGetView(ListAPIView):\n    def get(self,request):\n        try:\n            id = self.request.POST.get(\"id\",'')\n            p_type = self.request.POST.get(\"property_type\",'')\n            p_purpose = self.request.POST.get(\"property_purpose\",'')\n            city = self.request.POST.get(\"city\",'')\n            residential_type = self.request.POST.get(\"residential_type\",'')# eg villa or flat.... \n            minimum_price = self.request.POST.get(\"price_minimum\",'')\n            maximum_price = self.request.POST.get(\"price_maximum\",'')",
+        "peekOfCode": "class PropertyGetView(ListAPIView):\n    serializer_class = LikedPropertySerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(AllowAny,)\n    def get(self,request):\n        try:\n            userid = self.request.user.id\n            id = self.request.POST.get(\"id\",'')\n            p_type = self.request.POST.get(\"property_type\",'')\n            p_purpose = self.request.POST.get(\"property_purpose\",'')",
         "detail": "propertyapp.views",
         "documentation": {}
     },
@@ -1324,12 +1498,48 @@
         "documentation": {}
     },
     {
+        "label": "ImagesView",
+        "kind": 6,
+        "importPath": "propertyapp.views",
+        "description": "propertyapp.views",
+        "peekOfCode": "class ImagesView(ListAPIView):\n    serializer_class = ImagesSerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(IsAuthenticated,)\n    def post(self,request):\n        isadmin = self.request.user.is_admin\n        isagent = self.request.user.is_agent\n        superuser = self.request.user.is_superuser\n        if isadmin==True or superuser == True or isagent==True:\n            try:",
+        "detail": "propertyapp.views",
+        "documentation": {}
+    },
+    {
         "label": "Migration",
         "kind": 6,
         "importPath": "userapp.migrations.0001_initial",
         "description": "userapp.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='UserModel',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "userapp.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "userapp.migrations.0002_usermodel_prof_image",
+        "description": "userapp.migrations.0002_usermodel_prof_image",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('userapp', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='usermodel',\n            name='prof_image',\n            field=models.ImageField(blank=True, upload_to='ProfileImage'),\n        ),",
+        "detail": "userapp.migrations.0002_usermodel_prof_image",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "userapp.migrations.0003_remove_usermodel_prof_image_usermodel_address_and_more",
+        "description": "userapp.migrations.0003_remove_usermodel_prof_image_usermodel_address_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('userapp', '0002_usermodel_prof_image'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='usermodel',\n            name='prof_image',\n        ),\n        migrations.AddField(",
+        "detail": "userapp.migrations.0003_remove_usermodel_prof_image_usermodel_address_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "userapp.migrations.0004_usermodel_last_searched",
+        "description": "userapp.migrations.0004_usermodel_last_searched",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('userapp', '0003_remove_usermodel_prof_image_usermodel_address_and_more'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='usermodel',\n            name='last_searched',\n            field=models.TextField(blank=True),\n        ),",
+        "detail": "userapp.migrations.0004_usermodel_last_searched",
         "documentation": {}
     },
     {
@@ -1346,7 +1556,7 @@
         "kind": 6,
         "importPath": "userapp.models",
         "description": "userapp.models",
-        "peekOfCode": "class UserModel(AbstractUser):\n    is_admin = models.BooleanField(default=False)\n    is_agent = models.BooleanField(default=False)\n    created_date = models.DateTimeField(auto_now_add=True)\n    updated_date = models.DateTimeField(auto_now=True)",
+        "peekOfCode": "class UserModel(AbstractUser):\n    mobile = models.CharField(max_length=100,blank=True)\n    address = models.TextField(max_length=100,blank=True)\n    is_admin = models.BooleanField(default=False)\n    is_agent = models.BooleanField(default=False)\n    created_date = models.DateTimeField(auto_now_add=True)\n    updated_date = models.DateTimeField(auto_now=True)\n    logo = models.ImageField(upload_to='Image',blank=True)\n    last_searched = models.TextField(blank=True)",
         "detail": "userapp.models",
         "documentation": {}
     },

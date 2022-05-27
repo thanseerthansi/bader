@@ -11,8 +11,8 @@ from django.shortcuts import render
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from badder.validation import Validate
-from propertyapp.models import LikedPropertyModel, PropertyModel
-from propertyapp.serializers import LikedPropertySerializer, PropertySerializer
+from propertyapp.models import ImagesModel, LikedPropertyModel, PropertyModel
+from propertyapp.serializers import ImagesSerializer, LikedPropertySerializer, PropertySerializer
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.authentication import TokenAuthentication
 from userapp.models import UserModel
@@ -189,8 +189,14 @@ class PropertyView(ListAPIView):
                         property_qs = PropertyModel.objects.filter(id=id)
                         if property_qs.count(): 
                             property_qs = property_qs.first()
-                            # if not property_typeid: property_type_qs = property_qs.property_type
-                            # print("sgr",property_type_qs)
+                            # print("ok")
+                            if  lat=="" and lon =="": 
+                                # print("check")
+                                location = property_qs.location
+                                # print("sgr",location)
+                                if location =="": 
+                                    return Response({"Status":False,"Message":"location not found",})
+                                # print("sgr",location)
                             property_obj = PropertySerializer(property_qs,data=self.request.data,partial=True)
                             msg = "Successfully updated"
 
@@ -201,8 +207,9 @@ class PropertyView(ListAPIView):
                         property_obj = PropertySerializer(data=self.request.data,partial=True)
                         msg = "Successfully Created"
                     else:return Response({"Status":False,"Message":data})
-                location =GEOSGeometry(Point(float(lon), float(lat),srid=4326))
-                print("loaction",location)
+                if lat!="" and lon !="":
+                    location =GEOSGeometry(Point(float(lon), float(lat),srid=4326))
+                    # print("loaction",location)
                 property_obj.is_valid(raise_exception=True)
                 property_obj.save(agent=user_qs,location=location)
                 return Response({"Status":True,"Message":msg})
@@ -235,8 +242,12 @@ class PropertyView(ListAPIView):
             
 
 class PropertyGetView(ListAPIView):
+    serializer_class = LikedPropertySerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes =(AllowAny,)
     def get(self,request):
         try:
+            userid = self.request.user.id
             id = self.request.POST.get("id",'')
             p_type = self.request.POST.get("property_type",'')
             p_purpose = self.request.POST.get("property_purpose",'')
@@ -254,7 +265,7 @@ class PropertyGetView(ListAPIView):
             near_by = self.request.POST.get("near_by",'')
             room = self.request.POST.get("bedrooms",'')
             new = self.request.POST.get("new",'')          
-            if near_by != "":
+            if near_by != "":           # to view the nearest properties
                 mandatory = ['latitude','longitude','distance']
                 data = Validate(self.request.data,mandatory)
                 if data==True:
@@ -280,12 +291,26 @@ class PropertyGetView(ListAPIView):
             if room:qs = qs.filter(property_room=room)
             if p_purpose:qs= qs.filter(property_purpose=p_purpose)
             if dont_show : qs = qs.exclude(property_type__icontains=dont_show)
-            if new != "": qs = qs.order_by('-id')
+            if new != "": qs = qs.order_by('-id')#to view latest add a first add a value to new
             else: qs = qs.order_by('id')
+            print("qs",qs)
+            print("userid",userid)
+            # if userid != None: 
+            #     query=self.request.data
+            #     # print("query",query)
+            #     search_qs = UserModel.objects.filter(id=userid).update(last_searched=query)
+            #     # print("query updated")
             return Response({"data":PropertySerializer(qs ,many=True).data})
         except Exception as e: return Response({"Status":False,"Message":str(e)})
 
 # class checkquery(ListAPIView):
+#     def get(self,request):
+#         qs= UserModel.objects.filter(id=2)
+#         query=qs[0].last_searched
+#         print("sdf",query)
+#         id = query
+#         print("id",id)
+#         return Response({"data":id})
 #     def get(self,request):       
 #         latitude = self.request.POST.get("latitude")
 #         longitude = self.request.POST.get("longitude")
@@ -386,4 +411,84 @@ class LikedPropertyView(ListAPIView):
             return Response({
                 "Status" : False,
                 "Message" : str(e),
+            })
+
+class ImagesView(ListAPIView):
+    serializer_class = ImagesSerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes =(IsAuthenticated,)
+    def post(self,request):
+        isadmin = self.request.user.is_admin
+        isagent = self.request.user.is_agent
+        superuser = self.request.user.is_superuser
+        if isadmin==True or superuser == True or isagent==True:
+            try:
+                mandatory = ['property']
+                data = Validate(self.request.data,mandatory)
+                id = self.request.POST.get("id","")              
+                property_id = self.request.POST.get("property","")
+                if property_id:
+                    property_qs = PropertyModel.objects.filter(id=property_id)
+                    if property_qs.count(): property_obj = property_qs.first()              
+                if id: 
+                    if id.isdigit():
+                        images_qs = ImagesModel.objects.filter(id=id)
+                        if images_qs.count():
+                            images_qs = images_qs.first()
+                            if not property_id : property_obj =  images_qs.property_id
+                            images_obj = ImagesSerializer(images_qs,data=self.request.data,partial=True)
+                            msg = "Successfully modified"
+                        else: return Response({"Status":"False","Message":"No Records found with given id"})
+                    else: return Response({"Status":False,"Message":"Provide valid id"}) 
+                else: 
+                    if data == True: 
+                        images_obj = ImagesSerializer(data=self.request.data,partial=True)
+                        msg = "Successfully Created" 
+                    else: return Response({"Status":False,"Message":"could not find  property"})          
+                images_obj.is_valid(raise_exception=True)
+                images_obj.save(property_id=property_obj)
+                return Response({"Status":True,"Message":msg})                
+            except Exception as e: return Response({"Status":False,"Message":str(e),})
+        else:return Response({"Status":False,"Message":"Something Went Wrong"})
+    def get_queryset(self):
+        try:
+            id = self.request.POST.get("id",'')
+            property_id = self.request.POST.get("property") 
+            image_type = self.request.POST.get("image_purpose","")
+            qs = ImagesModel.objects.all()
+            if id : qs = qs.filter(id=id)
+            if property_id : qs = qs.filter(property_id__id=property_id)
+            if image_type : qs = qs.filter(image_purpose__icontains=image_type)
+            return qs
+        except :return None
+    # def get(self,request):
+    #     id = self.request.POST.get("id",'')
+    #     type = self.request.POST.get("types","")
+    #     qs = PropertyTypesModel.objects.all()
+    #     if id : qs = qs.filter(id=id)
+    #     if type : qs = qs.filter(types=type)
+    #     return Response({"data":PropertyTypesSerializer(qs,many=True).data})
+    
+    def delete(self,request):
+        isadmin = self.request.user.is_admin
+        isagent = self.request.user.is_agent
+        superuser = self.request.user.is_superuser
+        if isadmin == True or superuser == True or isagent==True:
+            try:
+                id = self.request.POST.get("id","[]")
+                id = json.loads(id)
+                objects = ImagesModel.objects.filter(id__in=id)
+                if objects.count():
+                    objects.delete()
+                    return Response({"Status":True,"Message":"deleted successfully"})
+                else: return Response({"Status":False,"Message":"No records with given id" })
+            except Exception as e:
+                return Response({
+                    "Status" : False,
+                    "Message" : str(e),
+                })
+        else:
+            return Response({
+                "Status" : False,
+                "Message" : "Something Went Wrong"
             })

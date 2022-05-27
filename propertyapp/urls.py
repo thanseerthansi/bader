@@ -6,7 +6,8 @@ urlpatterns = [
    path('property/',PropertyView.as_view()),
    path('propertyget/',PropertyGetView.as_view()),
    path('likedproperty/',LikedPropertyView.as_view()),
-   # path('querycheck/',checkquery.as_view()),
+   path('images/',ImagesView.as_view()),
+   # path('check/',checkquery.as_view()),
   
 
 ]
