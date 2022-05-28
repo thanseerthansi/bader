@@ -372,8 +372,7 @@ class LikedPropertyView(ListAPIView):
         try:
             userid = self.request.user.id
             id = self.request.POST.get("id",'')
-            property_id = self.request.POST.get("property")
-            
+            property_id = self.request.POST.get("property")           
             qs = LikedPropertyModel.objects.all()
             if id:qs = qs.filter(id=id)
             else: qs = qs.filter(user_id=userid)

@@ -1511,7 +1511,7 @@
         "kind": 6,
         "importPath": "propertyapp.views",
         "description": "propertyapp.views",
-        "peekOfCode": "class LikedPropertyView(ListAPIView):\n    serializer_class = LikedPropertySerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(AllowAny,)\n    def get_queryset(self):\n        try:\n            userid = self.request.user.id\n            id = self.request.POST.get(\"id\",'')\n            property_id = self.request.POST.get(\"property\")\n            qs = LikedPropertyModel.objects.all()",
+        "peekOfCode": "class LikedPropertyView(ListAPIView):\n    serializer_class = LikedPropertySerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(AllowAny,)\n    def get_queryset(self):\n        try:\n            userid = self.request.user.id\n            id = self.request.POST.get(\"id\",'')\n            property_id = self.request.POST.get(\"property\")           \n            qs = LikedPropertyModel.objects.all()",
         "detail": "propertyapp.views",
         "documentation": {}
     },
