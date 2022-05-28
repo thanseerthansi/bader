@@ -1,5 +1,6 @@
 # from django.db import models
 from django.contrib.gis.db import models
+
 from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
@@ -11,6 +12,6 @@ class UserModel(AbstractUser):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     logo = models.ImageField(upload_to='Image',blank=True)
-    last_searched = models.TextField(blank=True)
+    last_searched = models.CharField(max_length=200,blank=True)
     
     

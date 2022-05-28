@@ -1,10 +1,9 @@
+import django.urls
 import json
 # from math import sin, cos, sqrt, atan2, radians
 # import math
-# from django.db.models import When,Case,Sum
 from django.contrib.gis.geos import Point
 from django.contrib.gis.measure import D
-# from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.db.models.functions import GeometryDistance
 from django.contrib.gis.geos import GEOSGeometry
 from django.shortcuts import render
@@ -16,6 +15,8 @@ from propertyapp.serializers import ImagesSerializer, LikedPropertySerializer, P
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.authentication import TokenAuthentication
 from userapp.models import UserModel
+
+
 # Create your views here.
 # class PropertyTypeView(ListAPIView):
 #     serializer_class = PropertyTypesSerializer
@@ -60,8 +61,7 @@ from userapp.models import UserModel
 #     #     qs = PropertyTypesModel.objects.all()
 #     #     if id : qs = qs.filter(id=id)
 #     #     if type : qs = qs.filter(types=type)
-#     #     return Response({"data":PropertyTypesSerializer(qs,many=True).data})
-    
+#     #     return Response({"data":PropertyTypesSerializer(qs,many=True).data}) 
 #     def delete(self,request):
 #         isadmin = self.request.user.is_admin
 #         isagent = self.request.user.is_agent
@@ -85,6 +85,7 @@ from userapp.models import UserModel
 #                 "Status" : False,
 #                 "Message" : "Something Went Wrong"
 #             })
+
 class PropertyView(ListAPIView):
     serializer_class = PropertySerializer
     authentication_classes = (TokenAuthentication,)
@@ -114,7 +115,9 @@ class PropertyView(ListAPIView):
     #     except : return None
     def get(self,request):
         try:
+            userid = self.request.user.id
             id = self.request.POST.get("id",'')
+            agent = self.request.POST.get("agent",'')
             p_type = self.request.POST.get("property_type",'')# eg residential , land....
             p_purpose = self.request.POST.get("property_purpose",'')
             city = self.request.POST.get("city",'')
@@ -128,7 +131,8 @@ class PropertyView(ListAPIView):
             longitude = self.request.POST.get("longitude")
             distance = self.request.POST.get("distance",'')
             near_by = self.request.POST.get("near_by",'')
-            room = self.request.POST.get("bedrooms",'')
+            minroom = self.request.POST.get("minbedroom",'')
+            maxroom = self.request.POST.get("maxbedroom",'')
             new = self.request.POST.get("new",'')           
             if near_by != "":
                 mandatory = ['latitude','longitude','distance']
@@ -138,25 +142,30 @@ class PropertyView(ListAPIView):
                     print("dis",distance)
                     qs = PropertyModel.objects.filter(location__dwithin=(ref_location, D (km=distance))) \
                     .annotate(distance=GeometryDistance('location', ref_location)) \
-                    .order_by("distance")
+                    .order_by("distance").select_related('agent')
                     # print(queryset)
                     # qs = queryset
                 else:return Response({"Status":False,"Message":data})
             else:
-                qs = PropertyModel.objects.all()
+                qs = PropertyModel.objects.all().select_related('agent')
             if id:qs = qs.filter(id=id)
+            if agent:qs = qs.filter(agent=agent)
             if city:qs= qs.filter(property_city__icontains=city)
-            if minimum_price:qs= qs.filter(property_price__gt=minimum_price)
-            if maximum_price:qs= qs.filter(property_price__lt=maximum_price)
+            if minimum_price:qs= qs.filter(property_price__gte=minimum_price)
+            if maximum_price:qs= qs.filter(property_price__lte=maximum_price)
             if name:qs= qs.filter(property_name__icontains=name)
             if residential_type:qs= qs.filter(residential_type__icontains=residential_type)# eg villa or flat 
             if p_type:qs= qs.filter(property_type__icontains=p_type)
             if p_purpose:qs= qs.filter(property_purpose=p_purpose)
             if p_radious:qs= qs.filter(property_radious=p_radious)
-            if room:qs = qs.filter(property_room=room)
+            if minroom:qs = qs.filter(property_room__gte=minroom)
+            if maxroom:qs = qs.filter(property_room__lte=maxroom)
             if p_date:qs= qs.filter(added_date=p_date)
             if new != "": qs = qs.order_by('-id')
             else: qs = qs.order_by('id')
+            if userid != None: 
+                lst =list( qs.values_list('id',flat=True))
+                search_qs = UserModel.objects.filter(id=userid).update(last_searched=lst)
             return Response({"data":PropertySerializer(qs,many=True).data})
         except Exception as e: return Response({"Status":False,"Message":str(e)})    
 
@@ -248,6 +257,7 @@ class PropertyGetView(ListAPIView):
     def get(self,request):
         try:
             userid = self.request.user.id
+            agent = self.request.POST.get("agent",'')
             id = self.request.POST.get("id",'')
             p_type = self.request.POST.get("property_type",'')
             p_purpose = self.request.POST.get("property_purpose",'')
@@ -263,7 +273,8 @@ class PropertyGetView(ListAPIView):
             longitude = self.request.POST.get("longitude")
             distance = self.request.POST.get("distance",'')
             near_by = self.request.POST.get("near_by",'')
-            room = self.request.POST.get("bedrooms",'')
+            minroom = self.request.POST.get("minbedroom",'')
+            maxroom = self.request.POST.get("maxbedroom",'')
             new = self.request.POST.get("new",'')          
             if near_by != "":           # to view the nearest properties
                 mandatory = ['latitude','longitude','distance']
@@ -273,50 +284,68 @@ class PropertyGetView(ListAPIView):
                     print("dis",distance)
                     qs = PropertyModel.objects.filter(location__dwithin=(ref_location, D (km=distance))) \
                     .annotate(distance=GeometryDistance('location', ref_location)) \
-                    .order_by("distance")
+                    .order_by("distance").select_related('agent')
                     # print(queryset)
                     # qs = queryset
                 else:return Response({"Status":False,"Message":data})
             else:
-                qs = PropertyModel.objects.all()
+                qs = PropertyModel.objects.all().select_related('agent')
             if id:qs = qs.filter(id=id)
+            if agent: qs = qs.filter(agent=agent)
             if city:qs= qs.filter(property_city__icontains=city)
-            if minimum_price:qs= qs.filter(property_price__gt=minimum_price)
-            if maximum_price:qs= qs.filter(property_price__lt=maximum_price)
+            if minimum_price:qs= qs.filter(property_price__gte=minimum_price)
+            if maximum_price:qs= qs.filter(property_price__lte=maximum_price)
             if name:qs= qs.filter(property_name__icontains=name)
             if residential_type:qs= qs.filter(residential_type__icontains=residential_type)# eg villa or flat 
             if p_type:qs= qs.filter(property_type__icontains=p_type)
             if p_radious:qs= qs.filter(property_radious=p_radious)
             if p_date:qs= qs.filter(added_date=p_date)
-            if room:qs = qs.filter(property_room=room)
+            if minroom:qs = qs.filter(property_room__gte=minroom)
+            if maxroom:qs = qs.filter(property_room__lte=maxroom)
             if p_purpose:qs= qs.filter(property_purpose=p_purpose)
             if dont_show : qs = qs.exclude(property_type__icontains=dont_show)
             if new != "": qs = qs.order_by('-id')#to view latest add a first add a value to new
             else: qs = qs.order_by('id')
-            print("qs",qs)
-            print("userid",userid)
-            # if userid != None: 
-            #     query=self.request.data
-            #     # print("query",query)
-            #     search_qs = UserModel.objects.filter(id=userid).update(last_searched=query)
-            #     # print("query updated")
+            # print("qs",qs)
+            # print("userid",userid)
+            if userid != None: 
+                lst =list( qs.values_list('id',flat=True))
+                # lst =[]
+                # for i in qs:
+                #     qs_id = i.id
+                    # print("qsid",qs_id)
+                    # lst.append(qs_id)
+                # print("list",lst)
+
+                # datas = json.loads(query)
+                # print("querydata",datas)
+                search_qs = UserModel.objects.filter(id=userid).update(last_searched=lst)               
             return Response({"data":PropertySerializer(qs ,many=True).data})
         except Exception as e: return Response({"Status":False,"Message":str(e)})
 
-# class checkquery(ListAPIView):
-#     def get(self,request):
-#         qs= UserModel.objects.filter(id=2)
-#         query=qs[0].last_searched
-#         print("sdf",query)
-#         id = query
-#         print("id",id)
-#         return Response({"data":id})
+class RecentsearchedView(ListAPIView):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes =(AllowAny,)
+    def get(self,request):
+        userid = request.user.id 
+        try:
+            if userid !=None:
+                qs= UserModel.objects.filter(id=userid)      
+                query=qs[0].last_searched   
+                # print("sdf",query)
+                if query != "":
+                    query_ids = json.loads(query)
+                    objects = PropertyModel.objects.filter(id__in=query_ids)
+                else:return Response({"Status":False,"Message":"No Recent history found"})
+                return Response({"data":PropertySerializer(objects ,many=True).data})
+            else:return Response({"Status":False,"Message":"No Recent history found"})
+        except Exception as e: return Response({"Status":False,"Message":str(e)})
 #     def get(self,request):       
 #         latitude = self.request.POST.get("latitude")
 #         longitude = self.request.POST.get("longitude")
 #         distance = self.request.POST.get("distance",'')
 #         near_by = self.request.POST.get("near_by",'')
-#         id = self.request.POST.get("id",'')
+#         "id" = self.request.POST.get("id",'')
 #         # longitude = self.request.query_params["longitude"]
 #         # print("lat",latitude)
 #         # print("lon",longitude)
@@ -344,10 +373,11 @@ class LikedPropertyView(ListAPIView):
             userid = self.request.user.id
             id = self.request.POST.get("id",'')
             property_id = self.request.POST.get("property")
+            
             qs = LikedPropertyModel.objects.all()
             if id:qs = qs.filter(id=id)
             else: qs = qs.filter(user_id=userid)
-            if property_id:qs = qs.filter(liked_property_id=id)
+            if property_id:qs = qs.filter(liked_property__in=property_id)
             return qs
         except : return None
    
@@ -455,7 +485,7 @@ class ImagesView(ListAPIView):
             id = self.request.POST.get("id",'')
             property_id = self.request.POST.get("property") 
             image_type = self.request.POST.get("image_purpose","")
-            qs = ImagesModel.objects.all()
+            qs = ImagesModel.objects.all().select_related('property_id')
             if id : qs = qs.filter(id=id)
             if property_id : qs = qs.filter(property_id__id=property_id)
             if image_type : qs = qs.filter(image_purpose__icontains=image_type)

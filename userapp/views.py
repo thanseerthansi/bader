@@ -1,5 +1,4 @@
 import json
-from django.shortcuts import render
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from django.contrib.auth.models import User
@@ -8,7 +7,6 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.hashers import make_password
-from propertyapp.models import LikedPropertyModel
 from userapp.models import UserModel
 
 from userapp.serializers import UserSerializer

@@ -73,6 +73,15 @@
         "documentation": {}
     },
     {
+        "label": "django.urls",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -682,6 +691,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "django.db.models.deletion",
         "kind": 6,
         "isExtraImport": true,
@@ -741,14 +766,6 @@
     },
     {
         "label": "PropertyModel",
-        "importPath": "propertyapp.models",
-        "description": "propertyapp.models",
-        "isExtraImport": true,
-        "detail": "propertyapp.models",
-        "documentation": {}
-    },
-    {
-        "label": "LikedPropertyModel",
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
         "isExtraImport": true,
@@ -890,14 +907,6 @@
         "description": "django.contrib.gis.db.models.functions",
         "isExtraImport": true,
         "detail": "django.contrib.gis.db.models.functions",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -1466,7 +1475,7 @@
         "kind": 5,
         "importPath": "propertyapp.urls",
         "description": "propertyapp.urls",
-        "peekOfCode": "urlpatterns = [\n   # path('propertytype/',PropertyTypeView.as_view()),\n   path('property/',PropertyView.as_view()),\n   path('propertyget/',PropertyGetView.as_view()),\n   path('likedproperty/',LikedPropertyView.as_view()),\n   path('images/',ImagesView.as_view()),\n   # path('check/',checkquery.as_view()),\n]",
+        "peekOfCode": "urlpatterns = [\n   # path('propertytype/',PropertyTypeView.as_view()),\n   path('property/',PropertyView.as_view()),\n   path('propertyget/',PropertyGetView.as_view()),\n   path('likedproperty/',LikedPropertyView.as_view()),\n   path('images/',ImagesView.as_view()),\n   path('recent/',RecentsearchedView.as_view()),\n]",
         "detail": "propertyapp.urls",
         "documentation": {}
     },
@@ -1484,7 +1493,16 @@
         "kind": 6,
         "importPath": "propertyapp.views",
         "description": "propertyapp.views",
-        "peekOfCode": "class PropertyGetView(ListAPIView):\n    serializer_class = LikedPropertySerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(AllowAny,)\n    def get(self,request):\n        try:\n            userid = self.request.user.id\n            id = self.request.POST.get(\"id\",'')\n            p_type = self.request.POST.get(\"property_type\",'')\n            p_purpose = self.request.POST.get(\"property_purpose\",'')",
+        "peekOfCode": "class PropertyGetView(ListAPIView):\n    serializer_class = LikedPropertySerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(AllowAny,)\n    def get(self,request):\n        try:\n            userid = self.request.user.id\n            agent = self.request.POST.get(\"agent\",'')\n            id = self.request.POST.get(\"id\",'')\n            p_type = self.request.POST.get(\"property_type\",'')",
+        "detail": "propertyapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "RecentsearchedView",
+        "kind": 6,
+        "importPath": "propertyapp.views",
+        "description": "propertyapp.views",
+        "peekOfCode": "class RecentsearchedView(ListAPIView):\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(AllowAny,)\n    def get(self,request):\n        userid = request.user.id \n        try:\n            if userid !=None:\n                qs= UserModel.objects.filter(id=userid)      \n                query=qs[0].last_searched   \n                # print(\"sdf\",query)",
         "detail": "propertyapp.views",
         "documentation": {}
     },
@@ -1543,6 +1561,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "userapp.migrations.0005_alter_usermodel_last_searched",
+        "description": "userapp.migrations.0005_alter_usermodel_last_searched",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('userapp', '0004_usermodel_last_searched'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='usermodel',\n            name='last_searched',\n            field=models.CharField(blank=True, max_length=200),\n        ),",
+        "detail": "userapp.migrations.0005_alter_usermodel_last_searched",
+        "documentation": {}
+    },
+    {
         "label": "UserappConfig",
         "kind": 6,
         "importPath": "userapp.apps",
@@ -1556,7 +1583,7 @@
         "kind": 6,
         "importPath": "userapp.models",
         "description": "userapp.models",
-        "peekOfCode": "class UserModel(AbstractUser):\n    mobile = models.CharField(max_length=100,blank=True)\n    address = models.TextField(max_length=100,blank=True)\n    is_admin = models.BooleanField(default=False)\n    is_agent = models.BooleanField(default=False)\n    created_date = models.DateTimeField(auto_now_add=True)\n    updated_date = models.DateTimeField(auto_now=True)\n    logo = models.ImageField(upload_to='Image',blank=True)\n    last_searched = models.TextField(blank=True)",
+        "peekOfCode": "class UserModel(AbstractUser):\n    mobile = models.CharField(max_length=100,blank=True)\n    address = models.TextField(max_length=100,blank=True)\n    is_admin = models.BooleanField(default=False)\n    is_agent = models.BooleanField(default=False)\n    created_date = models.DateTimeField(auto_now_add=True)\n    updated_date = models.DateTimeField(auto_now=True)\n    logo = models.ImageField(upload_to='Image',blank=True)\n    last_searched = models.CharField(max_length=200,blank=True)",
         "detail": "userapp.models",
         "documentation": {}
     },
