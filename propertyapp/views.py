@@ -379,7 +379,6 @@ class LikedPropertyView(ListAPIView):
             if property_id:qs = qs.filter(liked_property__in=property_id)
             return qs
         except : return None
-   
     # def post(self,request):
     #   userid = self.request.user.id
     #                 print("userid",userid)  
