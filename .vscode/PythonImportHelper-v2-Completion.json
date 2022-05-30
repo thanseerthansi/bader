@@ -73,15 +73,6 @@
         "documentation": {}
     },
     {
-        "label": "django.urls",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -1448,7 +1439,7 @@
         "kind": 6,
         "importPath": "propertyapp.serializers",
         "description": "propertyapp.serializers",
-        "peekOfCode": "class PropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PropertyModel\n        fields = '__all__'\nclass LikedPropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = LikedPropertyModel\n        fields = '__all__'\nclass ImagesSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "peekOfCode": "class PropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = PropertyModel\n        fields = '__all__'\nclass LikedPropertySerializer(serializers.ModelSerializer):\n    liked_property = PropertySerializer(many=True)\n    class Meta:\n        model = LikedPropertyModel\n        fields = '__all__'\nclass ImagesSerializer(serializers.ModelSerializer):",
         "detail": "propertyapp.serializers",
         "documentation": {}
     },
@@ -1457,7 +1448,7 @@
         "kind": 6,
         "importPath": "propertyapp.serializers",
         "description": "propertyapp.serializers",
-        "peekOfCode": "class LikedPropertySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = LikedPropertyModel\n        fields = '__all__'\nclass ImagesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ImagesModel\n        fields = '__all__'",
+        "peekOfCode": "class LikedPropertySerializer(serializers.ModelSerializer):\n    liked_property = PropertySerializer(many=True)\n    class Meta:\n        model = LikedPropertyModel\n        fields = '__all__'\nclass ImagesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ImagesModel\n        fields = '__all__'",
         "detail": "propertyapp.serializers",
         "documentation": {}
     },
@@ -1511,7 +1502,7 @@
         "kind": 6,
         "importPath": "propertyapp.views",
         "description": "propertyapp.views",
-        "peekOfCode": "class LikedPropertyView(ListAPIView):\n    serializer_class = LikedPropertySerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(AllowAny,)\n    def get_queryset(self):\n        try:\n            userid = self.request.user.id\n            id = self.request.POST.get(\"id\",'')\n            property_id = self.request.POST.get(\"property\")           \n            qs = LikedPropertyModel.objects.all()",
+        "peekOfCode": "class LikedPropertyView(ListAPIView):        # patch instead of post \n    serializer_class = LikedPropertySerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(AllowAny,)\n    def get_queryset(self):\n        try:\n            userid = self.request.user.id\n            id = self.request.POST.get(\"id\",'')\n            property_id = self.request.POST.get(\"property\")           \n            qs = LikedPropertyModel.objects.all()",
         "detail": "propertyapp.views",
         "documentation": {}
     },

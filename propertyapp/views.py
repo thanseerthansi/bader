@@ -1,4 +1,3 @@
-import django.urls
 import json
 # from math import sin, cos, sqrt, atan2, radians
 # import math
@@ -164,7 +163,7 @@ class PropertyView(ListAPIView):
             if new != "": qs = qs.order_by('-id')
             else: qs = qs.order_by('id')
             if userid != None: 
-                lst =list( qs.values_list('id',flat=True))
+                lst =list( qs.values_list('id',flat=True))  # to add the searched object id's to last searched
                 search_qs = UserModel.objects.filter(id=userid).update(last_searched=lst)
             return Response({"data":PropertySerializer(qs,many=True).data})
         except Exception as e: return Response({"Status":False,"Message":str(e)})    
@@ -249,7 +248,7 @@ class PropertyView(ListAPIView):
                 "Message" : "Something Went Wrong"
             })
             
-
+# property get view to get the property to the users without login .
 class PropertyGetView(ListAPIView):
     serializer_class = LikedPropertySerializer
     authentication_classes = (TokenAuthentication,)
@@ -364,7 +363,7 @@ class RecentsearchedView(ListAPIView):
             
 #         return Response({"data":PropertySerializer(qs ,many=True).data})
 
-class LikedPropertyView(ListAPIView):
+class LikedPropertyView(ListAPIView):        # patch instead of post 
     serializer_class = LikedPropertySerializer
     authentication_classes = (TokenAuthentication,)
     permission_classes =(AllowAny,)
@@ -394,7 +393,7 @@ class LikedPropertyView(ListAPIView):
     #                     else: return Response({|"Status":False,"Message":"Went Wrong"})
     #                 except Exception as e: return Response({"Status":False,"Message":str(e)})
     
-    def patch(self,request):
+    def patch(self,request):      
         try:
             userid = self.request.user.id
             likedpropertyid = self.request.POST['property']
@@ -403,10 +402,10 @@ class LikedPropertyView(ListAPIView):
                 user_qs = UserModel.objects.filter(id=userid)
                 if user_qs.count():
                     user_qs = user_qs.first()
-                    print("userqs",user_qs)
+                    # print("userqs",user_qs)
                     likedproperty_qs = LikedPropertyModel.objects.filter(user=user_qs)
-                    if likedproperty_qs.count()==0 :LikedPropertyModel.objects.create(user=user_qs)
-                if likedproperty_qs.count(): likedproperty_obj=likedproperty_qs.first()
+                    if likedproperty_qs.count()==0 :LikedPropertyModel.objects.create(user=user_qs)#created liked 
+                    else: likedproperty_obj=likedproperty_qs.first()
                 else:return Response({"Status":False,"Message":"Went wrong"}) 
                 property_qs = PropertyModel.objects.filter(id=likedpropertyid)
                 if property_qs.count(): property_obj = property_qs.first()

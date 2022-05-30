@@ -11,6 +11,7 @@ class PropertySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class LikedPropertySerializer(serializers.ModelSerializer):
+    liked_property = PropertySerializer(many=True)
     class Meta:
         model = LikedPropertyModel
         fields = '__all__'
