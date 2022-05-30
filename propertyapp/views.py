@@ -5,7 +5,6 @@ from django.contrib.gis.geos import Point
 from django.contrib.gis.measure import D
 from django.contrib.gis.db.models.functions import GeometryDistance
 from django.contrib.gis.geos import GEOSGeometry
-from django.shortcuts import render
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from badder.validation import Validate
@@ -402,21 +401,25 @@ class LikedPropertyView(ListAPIView):        # patch instead of post
                 user_qs = UserModel.objects.filter(id=userid)
                 if user_qs.count():
                     user_qs = user_qs.first()
-                    # print("userqs",user_qs)
+                    print("userqs",user_qs)
                     likedproperty_qs = LikedPropertyModel.objects.filter(user=user_qs)
                     if likedproperty_qs.count()==0 :LikedPropertyModel.objects.create(user=user_qs)#created liked 
-                    else: likedproperty_obj=likedproperty_qs.first()
+                    else:likedproperty_obj=likedproperty_qs.first()
                 else:return Response({"Status":False,"Message":"Went wrong"}) 
                 property_qs = PropertyModel.objects.filter(id=likedpropertyid)
                 if property_qs.count(): property_obj = property_qs.first()
                 else: 
                     return Response({"status":False,"message":"property not found"})
-                if keyword=="add":
+                if keyword=="add":           
                     likedproperty_obj.liked_property.add(property_obj)
                     msg = "type added successfully"
                 if keyword=="remove":
-                    likedproperty_obj.liked_property.remove(property_obj)
-                    msg = "type removed successfully"
+                    propertyliked = likedproperty_obj.liked_property.all()
+                    print("rop",propertyliked)
+                    if property_obj not in propertyliked:return Response({"Status":False,"Message":"property not found in liked properties"})
+                    else:
+                        likedproperty_obj.liked_property.remove(property_obj)
+                        msg = "type removed successfully"
                 return Response({
                     "status":True,
                     "message":msg,

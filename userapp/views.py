@@ -1,7 +1,5 @@
-import json
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
-from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.views import ObtainAuthToken
@@ -109,7 +107,7 @@ class WhoAmI(ListAPIView):
         try:
             return Response({
                 "Status":1,
-                "Data":self.request.user.username
+                "Data":self.request.user.username   
             })
         except Exception as e: return Response({"Status":False,"Message":str(e),})
 

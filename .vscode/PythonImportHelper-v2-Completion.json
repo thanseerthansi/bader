@@ -901,14 +901,6 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "ListAPIView",
         "importPath": "rest_framework.generics",
         "description": "rest_framework.generics",
@@ -1055,14 +1047,6 @@
     },
     {
         "label": "AbstractUser",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
         "importPath": "django.contrib.auth.models",
         "description": "django.contrib.auth.models",
         "isExtraImport": true,
@@ -1610,7 +1594,7 @@
         "kind": 6,
         "importPath": "userapp.views",
         "description": "userapp.views",
-        "peekOfCode": "class WhoAmI(ListAPIView):\n    authentication_classes = (TokenAuthentication,)\n    permission_classes = (IsAuthenticatedOrReadOnly,)\n    def get(self,request):\n        try:\n            return Response({\n                \"Status\":1,\n                \"Data\":self.request.user.username\n            })\n        except Exception as e: return Response({\"Status\":False,\"Message\":str(e),})",
+        "peekOfCode": "class WhoAmI(ListAPIView):\n    authentication_classes = (TokenAuthentication,)\n    permission_classes = (IsAuthenticatedOrReadOnly,)\n    def get(self,request):\n        try:\n            return Response({\n                \"Status\":1,\n                \"Data\":self.request.user.username   \n            })\n        except Exception as e: return Response({\"Status\":False,\"Message\":str(e),})",
         "detail": "userapp.views",
         "documentation": {}
     },
