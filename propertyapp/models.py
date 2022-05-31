@@ -39,4 +39,9 @@ class ImagesModel(models.Model):
     image_purpose = models.CharField(max_length=100)
     created_date =  models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
+
+class UtilitiesModel(models.Model):
+    property = models.ForeignKey(PropertyModel,on_delete=models.CASCADE)
+    utility = models.CharField(max_length=100)
+    far = models.FloatField(default=0.0)
     

@@ -21,4 +21,10 @@ class ImagesSerializer(serializers.ModelSerializer):
         model = ImagesModel
         fields = '__all__'
 
+class UtilitiesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UtilitiesModel
+        fields = '__all__'
+
+
 

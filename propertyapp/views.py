@@ -8,8 +8,8 @@ from django.contrib.gis.geos import GEOSGeometry
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from badder.validation import Validate
-from propertyapp.models import ImagesModel, LikedPropertyModel, PropertyModel
-from propertyapp.serializers import ImagesSerializer, LikedPropertySerializer, PropertySerializer
+from propertyapp.models import ImagesModel, LikedPropertyModel, PropertyModel, UtilitiesModel
+from propertyapp.serializers import ImagesSerializer, LikedPropertySerializer, PropertySerializer, UtilitiesSerializer
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.authentication import TokenAuthentication
 from userapp.models import UserModel
@@ -508,6 +508,79 @@ class ImagesView(ListAPIView):
                 id = self.request.POST.get("id","[]")
                 id = json.loads(id)
                 objects = ImagesModel.objects.filter(id__in=id)
+                if objects.count():
+                    objects.delete()
+                    return Response({"Status":True,"Message":"deleted successfully"})
+                else: return Response({"Status":False,"Message":"No records with given id" })
+            except Exception as e:
+                return Response({
+                    "Status" : False,
+                    "Message" : str(e),
+                })
+        else:
+            return Response({
+                "Status" : False,
+                "Message" : "Something Went Wrong"
+            })
+
+class UtilitiesView(ListAPIView):
+    serializer_class = UtilitiesSerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes =(IsAuthenticated,)
+    def post(self,request):
+        isadmin = self.request.user.is_admin
+        isagent = self.request.user.is_agent
+        superuser = self.request.user.is_superuser
+        if isadmin==True or superuser == True or isagent==True:
+            try:
+                mandatory = ['property','utility']
+                data = Validate(self.request.data,mandatory)
+                id = self.request.POST.get("id","")              
+                property_id = self.request.POST.get("property","")
+                if property_id:
+                    property_qs = PropertyModel.objects.filter(id=property_id)
+                    if property_qs.count(): property_obj = property_qs.first()              
+                if id: 
+                    if id.isdigit():
+                        utility_qs = UtilitiesModel.objects.filter(id=id)
+                        if utility_qs.count():
+                            utility_qs = utility_qs.first()
+                            if not property_id : property_obj =  utility_qs.property_id
+                            utility_obj = UtilitiesSerializer(utility_qs,data=self.request.data,partial=True)
+                            msg = "Successfully modified"
+                        else: return Response({"Status":"False","Message":"No Records found with given id"})
+                    else: return Response({"Status":False,"Message":"Provide valid id"}) 
+                else: 
+                    if data == True: 
+                        utility_obj = UtilitiesSerializer(data=self.request.data,partial=True)
+                        msg = "Successfully Created" 
+                    else: return Response({"Status":False,"Message":"could not find  property"})          
+                utility_obj.is_valid(raise_exception=True)
+                utility_obj.save(property=property_obj)
+                return Response({"Status":True,"Message":msg})                
+            except Exception as e: return Response({"Status":False,"Message":str(e),})
+        else:return Response({"Status":False,"Message":"Something Went Wrong"})
+    def get_queryset(self):
+        try:
+            id = self.request.POST.get("id",'')
+            property_id = self.request.POST.get("property") 
+            utility = self.request.POST.get("utility","")
+            qs = UtilitiesModel.objects.all().select_related('property')
+            if id : qs = qs.filter(id=id)
+            if property_id : qs = qs.filter(property__id=property_id)
+            if utility : qs = qs.filter(utility__icontains=utility)
+            return qs
+        except :return None
+ 
+    def delete(self,request):
+        isadmin = self.request.user.is_admin
+        isagent = self.request.user.is_agent
+        superuser = self.request.user.is_superuser
+        if isadmin == True or superuser == True or isagent==True:
+            try:
+                id = self.request.POST.get("id","[]")
+                id = json.loads(id)
+                objects = UtilitiesModel.objects.filter(id__in=id)
                 if objects.count():
                     objects.delete()
                     return Response({"Status":True,"Message":"deleted successfully"})

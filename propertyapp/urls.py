@@ -8,6 +8,6 @@ urlpatterns = [
    path('likedproperty/',LikedPropertyView.as_view()),
    path('images/',ImagesView.as_view()),
    path('recent/',RecentsearchedView.as_view()),
+   path('utlities/',UtilitiesView.as_view()),
   
-
 ]

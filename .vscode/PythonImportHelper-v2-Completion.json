@@ -698,6 +698,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "django.db.models.deletion",
         "kind": 6,
         "isExtraImport": true,
@@ -740,6 +756,14 @@
         "documentation": {}
     },
     {
+        "label": "UtilitiesModel",
+        "importPath": "propertyapp.models",
+        "description": "propertyapp.models",
+        "isExtraImport": true,
+        "detail": "propertyapp.models",
+        "documentation": {}
+    },
+    {
         "label": "ImagesModel",
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
@@ -757,6 +781,14 @@
     },
     {
         "label": "PropertyModel",
+        "importPath": "propertyapp.models",
+        "description": "propertyapp.models",
+        "isExtraImport": true,
+        "detail": "propertyapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "UtilitiesModel",
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
         "isExtraImport": true,
@@ -966,6 +998,14 @@
     },
     {
         "label": "PropertySerializer",
+        "importPath": "propertyapp.serializers",
+        "description": "propertyapp.serializers",
+        "isExtraImport": true,
+        "detail": "propertyapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "UtilitiesSerializer",
         "importPath": "propertyapp.serializers",
         "description": "propertyapp.serializers",
         "isExtraImport": true,
@@ -1383,6 +1423,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "propertyapp.migrations.0007_utilitiesmodel",
+        "description": "propertyapp.migrations.0007_utilitiesmodel",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('propertyapp', '0006_alter_imagesmodel_image_purpose_and_more'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='UtilitiesModel',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('utility', models.CharField(max_length=100)),",
+        "detail": "propertyapp.migrations.0007_utilitiesmodel",
+        "documentation": {}
+    },
+    {
         "label": "PropertyappConfig",
         "kind": 6,
         "importPath": "propertyapp.apps",
@@ -1414,7 +1463,16 @@
         "kind": 6,
         "importPath": "propertyapp.models",
         "description": "propertyapp.models",
-        "peekOfCode": "class ImagesModel(models.Model):\n    property_id = models.ForeignKey(PropertyModel,on_delete=models.CASCADE)\n    images = models.ImageField(upload_to='Image',blank=True)\n    image_purpose = models.CharField(max_length=100)\n    created_date =  models.DateTimeField(auto_now_add=True)\n    updated_date = models.DateTimeField(auto_now=True)",
+        "peekOfCode": "class ImagesModel(models.Model):\n    property_id = models.ForeignKey(PropertyModel,on_delete=models.CASCADE)\n    images = models.ImageField(upload_to='Image',blank=True)\n    image_purpose = models.CharField(max_length=100)\n    created_date =  models.DateTimeField(auto_now_add=True)\n    updated_date = models.DateTimeField(auto_now=True)\nclass UtilitiesModel(models.Model):\n    property = models.ForeignKey(PropertyModel,on_delete=models.CASCADE)\n    utility = models.CharField(max_length=100)\n    far = models.FloatField(default=0.0)",
+        "detail": "propertyapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "UtilitiesModel",
+        "kind": 6,
+        "importPath": "propertyapp.models",
+        "description": "propertyapp.models",
+        "peekOfCode": "class UtilitiesModel(models.Model):\n    property = models.ForeignKey(PropertyModel,on_delete=models.CASCADE)\n    utility = models.CharField(max_length=100)\n    far = models.FloatField(default=0.0)",
         "detail": "propertyapp.models",
         "documentation": {}
     },
@@ -1432,7 +1490,7 @@
         "kind": 6,
         "importPath": "propertyapp.serializers",
         "description": "propertyapp.serializers",
-        "peekOfCode": "class LikedPropertySerializer(serializers.ModelSerializer):\n    liked_property = PropertySerializer(many=True)\n    class Meta:\n        model = LikedPropertyModel\n        fields = '__all__'\nclass ImagesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ImagesModel\n        fields = '__all__'",
+        "peekOfCode": "class LikedPropertySerializer(serializers.ModelSerializer):\n    liked_property = PropertySerializer(many=True)\n    class Meta:\n        model = LikedPropertyModel\n        fields = '__all__'\nclass ImagesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ImagesModel\n        fields = '__all__'\nclass UtilitiesSerializer(serializers.ModelSerializer):",
         "detail": "propertyapp.serializers",
         "documentation": {}
     },
@@ -1441,7 +1499,16 @@
         "kind": 6,
         "importPath": "propertyapp.serializers",
         "description": "propertyapp.serializers",
-        "peekOfCode": "class ImagesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ImagesModel\n        fields = '__all__'",
+        "peekOfCode": "class ImagesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ImagesModel\n        fields = '__all__'\nclass UtilitiesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = UtilitiesModel\n        fields = '__all__'",
+        "detail": "propertyapp.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "UtilitiesSerializer",
+        "kind": 6,
+        "importPath": "propertyapp.serializers",
+        "description": "propertyapp.serializers",
+        "peekOfCode": "class UtilitiesSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = UtilitiesModel\n        fields = '__all__'",
         "detail": "propertyapp.serializers",
         "documentation": {}
     },
@@ -1450,7 +1517,7 @@
         "kind": 5,
         "importPath": "propertyapp.urls",
         "description": "propertyapp.urls",
-        "peekOfCode": "urlpatterns = [\n   # path('propertytype/',PropertyTypeView.as_view()),\n   path('property/',PropertyView.as_view()),\n   path('propertyget/',PropertyGetView.as_view()),\n   path('likedproperty/',LikedPropertyView.as_view()),\n   path('images/',ImagesView.as_view()),\n   path('recent/',RecentsearchedView.as_view()),\n]",
+        "peekOfCode": "urlpatterns = [\n   # path('propertytype/',PropertyTypeView.as_view()),\n   path('property/',PropertyView.as_view()),\n   path('propertyget/',PropertyGetView.as_view()),\n   path('likedproperty/',LikedPropertyView.as_view()),\n   path('images/',ImagesView.as_view()),\n   path('recent/',RecentsearchedView.as_view()),\n   path('utlities/',UtilitiesView.as_view()),\n]",
         "detail": "propertyapp.urls",
         "documentation": {}
     },
@@ -1496,6 +1563,15 @@
         "importPath": "propertyapp.views",
         "description": "propertyapp.views",
         "peekOfCode": "class ImagesView(ListAPIView):\n    serializer_class = ImagesSerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(IsAuthenticated,)\n    def post(self,request):\n        isadmin = self.request.user.is_admin\n        isagent = self.request.user.is_agent\n        superuser = self.request.user.is_superuser\n        if isadmin==True or superuser == True or isagent==True:\n            try:",
+        "detail": "propertyapp.views",
+        "documentation": {}
+    },
+    {
+        "label": "UtilitiesView",
+        "kind": 6,
+        "importPath": "propertyapp.views",
+        "description": "propertyapp.views",
+        "peekOfCode": "class UtilitiesView(ListAPIView):\n    serializer_class = UtilitiesSerializer\n    authentication_classes = (TokenAuthentication,)\n    permission_classes =(IsAuthenticated,)\n    def post(self,request):\n        isadmin = self.request.user.is_admin\n        isagent = self.request.user.is_agent\n        superuser = self.request.user.is_superuser\n        if isadmin==True or superuser == True or isagent==True:\n            try:",
         "detail": "propertyapp.views",
         "documentation": {}
     },
